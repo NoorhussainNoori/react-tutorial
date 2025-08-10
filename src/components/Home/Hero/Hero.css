@@ -1,0 +1,10 @@
+.container {
+    height: 80vh;
+    width: 98vw;
+    /* border: 1px solid blue; */
+    display: flex;
+}
+
+.left {
+    width: 60%;
+}

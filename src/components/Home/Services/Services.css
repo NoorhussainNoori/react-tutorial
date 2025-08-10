@@ -1,0 +1,22 @@
+.service-container {
+    margin-top: 160px;
+    text-align: center;
+
+}
+
+.service-container h3 {
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
+.service-container p {
+    margin-top: 0;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 20px;
+}

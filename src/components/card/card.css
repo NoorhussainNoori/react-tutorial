@@ -1,0 +1,27 @@
+.main-card-container {
+    border: 1px solid #cecece;
+    box-shadow: 3px 3px 3px black;
+    padding: 0 0 1rem 0;
+    width: 248px;
+    height: auto;
+    color: black;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.image img {
+    max-width: 246px;
+    width: 246px;
+    height: auto;
+}
+
+.title h4 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+    padding: 0;
+    color: rgb(0, 0, 135);
+}
+
+.slogan h6 {
+    font-size: 1rem;
+}
