@@ -1,0 +1,22 @@
+.input-container {
+    width: 320px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container label {
+    padding: 5px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.input-container input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 2px 5px;
+    border: none;
+    border-bottom: 1px solid blue;
+    outline: none;
+}
