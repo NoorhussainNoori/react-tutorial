@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import "./Playground.css";
 import Input from "../../FormComponents/Input";
 
@@ -7,21 +7,23 @@ const Playground = () => {
   const [lname, setLname] = useState();
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
+  const [favCar, setFavCar] = useState();
 
   let data = [];
 
-  const returnObject = (name, lname, phone, email) => {
+  const returnObject = (name, lname, phone, email, favCar) => {
     return {
       name: name,
       last_name: lname,
       phone: phone,
       email: email,
+      car: favCar,
     };
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    data.push(returnObject(name, lname, phone, email));
+    data.push(returnObject(name, lname, phone, email, favCar));
     console.log(data);
   };
   return (
@@ -52,6 +54,11 @@ const Playground = () => {
           placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
         />
+        <select value={favCar} onChange={(e) => setFavCar(e.target.value)}>
+          <option value="bmw">BMW</option>
+          <option value="toyota">Toyota</option>
+          <option value="range-rover">Range Rover</option>
+        </select>
         <input type="submit" value="Submit" />
       </form>
 
@@ -65,6 +72,10 @@ const Playground = () => {
               );
             })
           : "No Data Available"}
+      </div>
+      <div className="links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.css";
+import { Link } from "react-router-dom";
 
 const Hero = (props) => {
   return (
@@ -17,6 +18,9 @@ const Hero = (props) => {
       <div className="right">
         <img src="" alt="" width={480} height={480} />
         <h5>Profile Image</h5>
+      </div>
+      <div className="links">
+        <Link to={"/contact"}>Contact</Link>
       </div>
     </div>
   );
