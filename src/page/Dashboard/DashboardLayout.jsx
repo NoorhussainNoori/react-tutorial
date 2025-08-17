@@ -23,6 +23,12 @@ const DashboardLayout = () => {
       textDecoration: "none",
       color: "#000000ff",
     },
+    content: {
+      width: "80%",
+      padding: "20px",
+      backgroundColor: "#ffffff",
+      overflowY: "auto",
+    },
   };
   return (
     <div
@@ -71,7 +77,7 @@ const DashboardLayout = () => {
             </li>
           </ul>
         </div>
-        <div className="content">
+        <div className="content" styles={styles.content}>
           {/* You can add more components or content here */}
           <Outlet />
         </div>
