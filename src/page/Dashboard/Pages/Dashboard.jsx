@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Dashboard = () => {
+  const [seconds, setSeconds] = useState(0);
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSeconds(seconds + 1);
+    }, 1000);
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCounter(counter + 1);
+    }, 1000);
+  }, [seconds]);
+
   const visitors = {
     totalVisitors: 1000,
     lastWeekVisitors: 200,
@@ -53,6 +68,13 @@ const Dashboard = () => {
           <p>Total Events: {events.totalEvents}</p>
           <p>Upcoming Events: {events.upcomingEvents}</p>
           <p>Past Events: {events.pastEvents}</p>
+        </div>
+      </div>
+      <div className="timer">
+        <h3>Timer</h3>
+        <div className="timer-container">
+          <p>This is with empty array {seconds}</p>
+          <p>this is with array having counter {counter}</p>
         </div>
       </div>
     </>
