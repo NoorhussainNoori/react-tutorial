@@ -1,7 +1,47 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import HomeIcon from "@mui/icons-material/Home";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
+import BookOnlineIcon from "@mui/icons-material/BookOnline";
+import SettingsIcon from "@mui/icons-material/Settings";
+import EventNoteIcon from "@mui/icons-material/EventNote";
+import { Stack } from "@mui/material";
+import MenuItem from "../../components/MenuItem/MenuItem";
 
 const DashboardLayout = () => {
+  const routes = [
+    {
+      id: 1,
+      path: "/dashboard",
+      name: "Dashboard",
+      icon: HomeIcon,
+    },
+    {
+      id: 2,
+      path: "/dashboard/blogs",
+      name: "Blogs",
+      icon: EventNoteIcon,
+    },
+    {
+      id: 3,
+      path: "/dashboard/events",
+      name: "Events",
+      icon: EventAvailableIcon,
+    },
+    {
+      id: 4,
+      path: "/dashboard/appointments",
+      name: "Appointments",
+      icon: BookOnlineIcon,
+    },
+    {
+      id: 5,
+      path: "/dashboard/setting",
+      name: "Setting",
+      icon: SettingsIcon,
+    },
+  ];
+
   const styles = {
     container: {},
     title: {},
@@ -59,23 +99,18 @@ const DashboardLayout = () => {
       </div>
       <div className="rest" style={styles.rest}>
         <div className="sidebar" style={styles.sidebar}>
-          <ul>
-            <li>
-              <Link to={"/dashboard"}>Dashboard</Link>
-            </li>
-            <li>
-              <Link to={"/dashboard/blogs"}>Blogs</Link>
-            </li>
-            <li>
-              <Link to={"/dashboard/events"}>Events</Link>
-            </li>
-            <li>
-              <Link to={"/dashboard/appointments"}>Appointment</Link>
-            </li>
-            <li>
-              <Link to={"/dashboard/setting"}>Setting</Link>
-            </li>
-          </ul>
+          <Stack>
+            {routes.map((route) => {
+              return (
+                <MenuItem
+                  key={route.id}
+                  name={route.name}
+                  route={route.path}
+                  icon={route.icon}
+                />
+              );
+            })}
+          </Stack>
         </div>
         <div className="content" styles={styles.content}>
           {/* You can add more components or content here */}
